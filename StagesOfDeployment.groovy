@@ -1,10 +1,5 @@
 pipeline {
     agent any
-    environment {
-        DIRECTORY_PATH= "C:/ProgramData/Jenkins/.jenkins/workspace"
-        TESTING_ENVIRONMENT= "C:/ProgramData/Jenkins/.jenkins/workspace/first_pipe@2"
-        PRODUCTION_ENVIRONMENT= "Dawt"
-    }
     
     stages {
         stage('Build') {
