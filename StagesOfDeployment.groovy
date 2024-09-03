@@ -20,10 +20,18 @@ pipeline {
                 echo 'integrate a code analysis tool to analyse the code and ensure it meets industry standards'
             }
         }
-        stage('Security Scan') {
+        stage('Security Scan') { // enter EMAIL here
             steps {
                 echo 'Tool to be used: SonarQube'
                 echo 'perform a security scan on the code using a tool to identify any vulnerabilities'
+            } 
+            
+            post {
+                success {
+                    mail to: "dawtlianmang1@gmail.com",
+                    subject: "Build Status Email",
+                    body: "Build was sucessful"
+                }
             }
         }
         stage('Deploy To Staging') {
@@ -32,10 +40,17 @@ pipeline {
                 echo 'deploy the application to a staging server'
             }
         }
-        stage('Integration Tests On Staging') {
+        stage('Integration Tests On Staging') { // enter EMAIL here
             steps {
                 echo 'Tool to be used: Github'
                 echo 'run integration tests on the staging environment to ensure the application functions as expected in a production-like environment.'
+            }
+            post {
+                success {
+                    mail to: "dawtlianmang1@gmail.com",
+                    subject: "Build Status Email",
+                    body: "Build was sucessful"
+                }
             }
         }
         stage('Deploy To Production') {
