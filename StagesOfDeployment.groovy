@@ -30,7 +30,7 @@ pipeline {
                 success {
                     mail to: "dawtlianmang1@gmail.com",
                     subject: "Build Status Email",
-                    body: "Build was sucessful"
+                    body: "Security Scan was successful"
                 }
             }
         }
@@ -49,7 +49,7 @@ pipeline {
                 success {
                     mail to: "dawtlianmang1@gmail.com",
                     subject: "Build Status Email",
-                    body: "Build was sucessful"
+                    body: "Integration Tests were successful"
                 }
             }
         }
